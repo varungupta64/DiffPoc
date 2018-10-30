@@ -1,5 +1,8 @@
+package com.example.pojo;
+
 class two {
     String z;
+    @NonNull
     String y;
     String x;
     @NonNull

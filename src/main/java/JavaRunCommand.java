@@ -10,7 +10,14 @@ public class JavaRunCommand {
             
 	    // run the Unix "ps -ef" command
             // using the Runtime exec method:
-            Process p = Runtime.getRuntime().exec("git diff -U4");
+
+            /**
+             * Assume that 2 branch names would be present.
+             * Do git status
+             * For a specific package, filter out all the names of files that are changed.
+             * Recursively, find if the changes are breaking or not.
+             */
+            Process p = Runtime.getRuntime().exec("git status");
             
             BufferedReader stdInput = new BufferedReader(new 
                  InputStreamReader(p.getInputStream()));

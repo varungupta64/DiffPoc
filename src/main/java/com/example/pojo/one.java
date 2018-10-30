@@ -1,7 +1,10 @@
+package com.example.pojo;
+
 class one {
     @NonNull
-    String a;
+    public String a;
     String b;
+    @NonNull
     String c;
 
     public String getA() {
