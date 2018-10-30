@@ -7,6 +7,11 @@
     <groupId>groupId</groupId>
     <artifactId>DiffPoc</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+    <java.version>1.8</java.version>
+    </properties>
 
     
 </project>
