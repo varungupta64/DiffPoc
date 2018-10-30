@@ -3,8 +3,8 @@ package com.example.pojo;
 class one {
     @NonNull
     public String a;
-    String b;
     @NonNull
+    String b;
     String c;
 
     public String getA() {

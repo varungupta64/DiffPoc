@@ -2,11 +2,11 @@ package com.example.pojo;
 
 class two {
     String z;
-    @NonNull
     String y;
+    @NonNull
     String x;
     @NonNull
-    String w;
+    String v;
 
     public String getZ() {
         return z;
@@ -32,11 +32,11 @@ class two {
         this.x = x;
     }
 
-    public String getW() {
-        return w;
+    public String getV() {
+        return v;
     }
 
-    public void setW(String w) {
-        this.w = w;
+    public void setV(String v) {
+        this.v = v;
     }
 }
