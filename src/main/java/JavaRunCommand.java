@@ -1,15 +1,6 @@
-import com.google.gson.Gson;
-
-import javax.tools.JavaCompiler;
-import javax.tools.ToolProvider;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -23,7 +14,7 @@ public class JavaRunCommand {
         try {
 
             String master_branch = "master";
-            String current_branch = "develop";
+            String current_branch = "poc";
 
             /**
              * Assume that 2 branch names would be present.
