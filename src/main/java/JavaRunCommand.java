@@ -13,8 +13,8 @@ public class JavaRunCommand {
 
         try {
 
-            String master_branch = "fe3e66df3f21e1b5983427e4b0008bb01bdde331";
-            String current_branch = "ef80b522c676d2c0e559cd08767b4597518fec1f";
+            String master_branch = "master";
+            String current_branch = "poc";
 
             String sha1 = null;
             String sha2 = null;
@@ -43,11 +43,11 @@ public class JavaRunCommand {
 
             while ((s = stdInputSHA1.readLine()) != null) {
                 //Only files of package com.example.pojo required.
-                sha1 = s.split("/")[1];
+                sha1 = s;
             }
 
             while ((s = stdInputSHA2.readLine()) != null) {
-                sha2 = s.split("/")[1];
+                sha2 = s;
             }
 
 
