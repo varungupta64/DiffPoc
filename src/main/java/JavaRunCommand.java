@@ -13,8 +13,11 @@ public class JavaRunCommand {
 
         try {
 
-            String master_branch = "master";
-            String current_branch = "poc";
+            String master_branch = "fe3e66df3f21e1b5983427e4b0008bb01bdde331";
+            String current_branch = "ef80b522c676d2c0e559cd08767b4597518fec1f";
+
+            String sha1 = null;
+            String sha2 = null;
 
             /**
              * Assume that 2 branch names would be present.
@@ -28,10 +31,30 @@ public class JavaRunCommand {
              * Check how mail will be triggered.
              * Check how to hook it to maven.
              */
-            Process p = Runtime.getRuntime().exec("git diff --name-status master");
-            
-            BufferedReader stdInput = new BufferedReader(new 
-                 InputStreamReader(p.getInputStream()));
+            //Process p = Runtime.getRuntime().exec("git diff --name-status master");
+            Process psha1 = Runtime.getRuntime().exec("git rev-parse origin/"+master_branch);
+            Process psha2 = Runtime.getRuntime().exec("git rev-parse origin/"+current_branch);
+
+            BufferedReader stdInputSHA1 = new BufferedReader(new
+                    InputStreamReader(psha1.getInputStream()));
+
+            BufferedReader stdInputSHA2 = new BufferedReader(new
+                    InputStreamReader(psha2.getInputStream()));
+
+            while ((s = stdInputSHA1.readLine()) != null) {
+                //Only files of package com.example.pojo required.
+                sha1 = s.split("/")[1];
+            }
+
+            while ((s = stdInputSHA2.readLine()) != null) {
+                sha2 = s.split("/")[1];
+            }
+
+
+            Process p = Runtime.getRuntime().exec("git diff --name-only "+sha1+" "+sha2);
+
+            BufferedReader stdInput = new BufferedReader(new
+                    InputStreamReader(p.getInputStream()));
 
             List<String> fileNames = new ArrayList<String>(10);
 
@@ -40,7 +63,7 @@ public class JavaRunCommand {
                 //Only files of package com.example.pojo required.
                 if(s.contains("com/example/pojo/")){
                     System.out.println(s);
-                    fileNames.add(s.split("\t")[1]);
+                    fileNames.add(s);
                 }
             }
 
