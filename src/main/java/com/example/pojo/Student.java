@@ -5,7 +5,7 @@ public class Student {
     private int id;
     private int rollNo;
     private String gender;
-    private Address address;
+    private Address addres;
 
     public String getStudentName() {
         return studentName;
@@ -40,10 +40,10 @@ public class Student {
     }
 
     public Address getAddress() {
-        return address;
+        return addres;
     }
 
     public void setAddress(Address address) {
-        this.address = address;
+        this.addres = address;
     }
 }
